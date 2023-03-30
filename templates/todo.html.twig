@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Todo{% endblock %}
+
+{% block body %}
+<article>
+
+    <header>
+        <h1>Todo per kursmoment</h1>
+    </header>
+
+    <section>
+        <h2 id="kmom01">Kmom01</h2>
+        <p>
+            <ul>
+
+
+    <li><del>Gör en installation av Symfony och placera den i me/report. Den publika webbkatalogen skall ligga som me/report/public.</li>
+
+    <li>Skapa följande webbsidor, använd controller, templatefiler och en templatemotor, förslagsvis Twig.</li>
+    <ul>
+        <li><del>Skapa en route / som ger en presentation av dig själv inklusive en bild. Det är okey att vara anonym och hitta på en figur att presentera.</li>
+        <li>Skapa en route /about som berättar om kursen mvc och dess syfte. Länka till kursens Git-repo. Lägg till en representativ bild. Skapa ytterligare en länk som leder till ditt egna GitHub-repo. Sidan skall ha två kolumner.</li>
+        <li><del>Skapa en route /report där du samlar dina redovisningstexter för kursens kmom.</del></li>
+        <li><del>Skapa även så att länken /report#kmom01 leder direkt till kursmomentets redovisningstext.</li>
+    </ul>
+    <li><del>Skapa en ny route /lucky som visar något dynamiskt värde när man laddar om sidan tillsammans med en/flera bilder. Det kan vara ett “lucky number” men kanske kan du hitta på något annat spännande att visa upp i sidan. Gör sidan lite snygg och stylad, kanske till och med lite “crazy”. Se om du kan vara lite kreativ.</li>
+
+    <li><del>Skapa en route /api/quote där du ger ett JSON svar som innehåller dagens citat. Växla slumpmässigt mellan (minst) tre olika citat som du själv hittat på eller lånat av någon. JSON svaret skall även innehålla dagens datum och en tidsstämpel för när svaret genererades.</li>
+
+    <li>Skapa en tilltalande och enhetlig style till webbplatsen. Du kan använda LESS/SASS eller liknande CSS preprocessorer. Du kan använda CSS ramverk. Fundera och gör ett val.</li>
+
+    <li>
+        Sidorna skall ha en enhetlig layout och det skall finns
+        <ul>
+            <li>En tydlig header överst på varje sida, med eller utan bild.</li>
+            <li>En navbar som gör att man kan navigera mellan samtliga sidor.</li>
+            <li>En footer längst ned som visar rimliga detaljer.</li>
+        </ul>
+    </li>
+    <li>Skapa ett Git repo av katalogen me/report. Koppla samman repot med GitHub, GitLab eller liknande tjänst.</li>
+
+    <li>Committa alla filer och lägg till en tagg 1.0.0. Om du gör uppdateringar så ökar du taggen till 1.0.1, 1.0.2, 1.1.0 eller liknande.</li>
+
+    <li>Kör dbwebb test kmom01 för att kolla att du inte har några uppenbara fel.</li>
+
+    <li>Pusha upp repot till GitHub, inklusive taggarna.</li>
+
+    <li>Gör en dbwebb publishpure report för att kolla att det fungerar på studentservern.</li>
+
+            </ul>   
+        </p>
+    </section>
+        <section>
+        <h2 id="kmom02">Kmom02</h2>
+
+    </section>
+        <section>
+        <h2 id="kmom03">Kmom03</h2>
+
+    </section>
+        <section>
+        <h2 id="kmom04">Kmom04</h2>
+
+    </section>
+        <section>
+        <h2 id="kmom05">Kmom05</h2>
+
+        
+    </section>
+        <section>
+        <h2 id="kmom06">Kmom06</h2>
+    </section>
+</article>
+{% endblock %}
