@@ -14,14 +14,14 @@
         {% endblock %}
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="{{ path('presentation') }}">Presentation</a></li>
-                <li><a href="{{ path('report') }}">Report</a></li>
-                <li><a href="{{ path('about') }}">About MVC</a></li>
-                <li><a href="{{ path('todo') }}">Todo</a></li>
-            </ul>
-        </nav>
-        {% block body %}{% endblock %}
+        <header>
+        {% include 'header.html.twig' %}
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+        {% include 'footer.html.twig' %}
+        </footer>
     </body>
 </html>

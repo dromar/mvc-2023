@@ -1,0 +1,107 @@
+/* font */
+html {
+    font-size: 100%;
+    min-height: 100%;
+}
+
+body {
+    line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 3.911rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+h2 {
+    font-size: 2.941rem;
+}
+
+h3 {
+    font-size: 2.211rem;
+}
+
+
+a,
+p,
+li {
+    font-family: 'Merriweather', serif;
+    font-size: 1.25rem;
+    margin-bottom: 1.75rem;
+    text-align: justify;
+}
+
+
+
+/* färg */
+
+* {
+    background-color: #B2DFDB;
+    color: #484747;
+    box-sizing: border-box;
+}
+
+/* renelement */
+
+
+main {
+    margin-top: 3rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    height: 80%;
+}
+
+img {
+    max-width: 50%;
+}
+
+
+main {
+    margin-right: 12rem;
+    margin-left: 12rem;
+}
+
+header nav {
+    padding-top: 2%;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+footer nav {
+    padding-top: 2%;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
