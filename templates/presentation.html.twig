@@ -1,12 +1,11 @@
 {% extends "base.html.twig" %}
+{% set pageName = "Presentation" %}
 
-{% block title %}Presentation{% endblock %}
-
+{% block title %}{{pageName}}{% endblock %}
 {% block body %}
-    <h1>Presentation</h1>
     <p>Daro15 is studying web programming at BTH. The last two courses this year will be MVC and Webapp.</p>
     <p>He will have to do some cleanup from the database and oopython courses during spring and summer.</p>
-    <p>Looking forward to get aquainted with the last few technologies being thought this year.</p>
+    <p>Looking forward to get aquainted with the last few technologies this year.</p>
     <a href="{{ asset('img/me.jpg') }}">
         <img src="{{ asset('img/me.jpg') }}" alt="">
     </a>

@@ -1,15 +1,24 @@
 {% extends "base.html.twig" %}
 
-{% block title %}About MVC{% endblock %}
+{% set pageName = "About" %}
+
+{% block title %}{{pageName}}{% endblock %}
 
 {% block body %}
-    <h1>About MVC</h1>
-    <p>This is an about page for the dbwebb MVC course.</p>
-    <p>The course content is centered around combining several web technologies that has been taught during the first year at BTH.</p>
-    <p>Some technologies used will be PHP with symfony, twig, "good code standards", ORM, deploying and hosting pages.</p>
-    <ul>
-        <li><a href="https://dbwebb.se/kurser/mvc-v2">Course page on Dbwebb</a></li>
-        <li><a href="https://github.com/dbwebb-se/mvc">Course page on github</a></li>
-        <li><a href="https://github.com/dromar/mvc-2023">Daro15s github for MVC</a></li>
-    </ul>
+    <div class="two-col-layout">
+        <div class="about-main">
+        <p>This is an about page for the dbwebb MVC course.</p>
+        <p>The course content is centered around combining several web technologies that has been taught during the first year at BTH.</p>
+        <p>Some technologies used will be PHP with symfony, twig, "good code standards", ORM, deploying and hosting pages.</p>
+        <p>As this course ties the bag together wrt the technologies learned this year, each arrow in the picture to the right represent a course section that has been completed througout the year with the MVC course being the target.</p>
+        <ul>
+            <li><a href="https://dbwebb.se/kurser/mvc-v2">Course page on Dbwebb</a></li>
+            <li><a href="https://github.com/dbwebb-se/mvc">Course page on github</a></li>
+            <li><a href="https://github.com/dromar/mvc-2023">Daro15s github for MVC</a></li>
+        </ul>
+        </div>
+        <div class="about-aside">
+            <img src="{{ asset('img/about.jpg') }}">
+        <div>
+    </div>
 {% endblock %}

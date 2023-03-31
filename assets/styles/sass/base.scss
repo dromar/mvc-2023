@@ -60,13 +60,7 @@ main {
 }
 
 img {
-    max-width: 50%;
-}
-
-
-main {
-    margin-right: 12rem;
-    margin-left: 12rem;
+    max-width: 80%;
 }
 
 header nav {
@@ -93,8 +87,12 @@ footer nav {
 
     ul {
         display: flex;
-        justify-content: space-around;
+        justify-content: right;
         list-style: none;
+    }
+
+    li {
+        margin-right: 5vw;
     }
 
     a {

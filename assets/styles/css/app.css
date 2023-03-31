@@ -345,12 +345,7 @@ main {
 }
 
 img {
-  max-width: 50%;
-}
-
-main {
-  margin-right: 12rem;
-  margin-left: 12rem;
+  max-width: 80%;
 }
 
 header nav {
@@ -373,8 +368,11 @@ footer nav {
 }
 footer nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: right;
   list-style: none;
+}
+footer nav li {
+  margin-right: 5vw;
 }
 footer nav a {
   text-decoration: none;
@@ -384,9 +382,58 @@ footer nav a:hover {
 }
 
 .header-pic {
-  background-image: url("../../../public/img/headerbg.jpg");
-  height: 30vh;
-  border-bottom: 10px dashed white;
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+.header-pic h1 {
+  background-color: unset;
+}
+.header-pic .header-text {
+  background-color: unset;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 4.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.two-col-layout {
+  display: flex;
+  justify-content: center;
+}
+
+.about-main {
+  max-width: 40vw;
+}
+.about-main p {
+  text-align: right;
+  margin-right: 2vw;
+}
+.about-main li {
+  text-align: right;
+  margin-right: 2vw;
+}
+
+.about-aside {
+  max-width: 40vw;
+}
+.about-aside img {
+  margin-top: 20px;
+}
+
+.crazy {
+  font-size: 4em;
+  font-style: oblique;
+  background-color: unset;
+  margin-left: 5em;
+}
+
+.lucky-picture {
+  height: 40vh;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 900px) {

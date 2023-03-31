@@ -1,5 +1,60 @@
 .header-pic {
-    background-image: url("../../../public/img/headerbg.jpg");
-    height: 30vh;
-    border-bottom: 10px dashed white;
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        background-color: unset;
+    }
+
+    .header-text {
+        background-color: unset;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 4.25rem;
+        margin-bottom: 1.75rem;
+    }
+}
+
+.two-col-layout {
+    display:flex;
+    justify-content: center;
+}
+
+.about-main {
+    max-width: 40vw;
+    p {
+        text-align: right;
+        margin-right: 2vw;
+    }
+
+
+    li {
+        text-align: right;
+        margin-right: 2vw;
+    }
+}
+
+.about-aside {
+    max-width: 40vw;
+
+    img {
+        margin-top: 20px;
+    }
+}
+
+.crazy {
+    font-size: 4em;
+    font-style: oblique;
+    background-color: unset;
+    margin-left: 5em;
+
+}
+
+.lucky-picture {
+    height: 40vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 }

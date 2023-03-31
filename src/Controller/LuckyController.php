@@ -5,8 +5,9 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class LuckyController
+class LuckyController extends AbstractController
 {
     /**
     * @var array  $primeNumbers - Array of first 50 prime numbers
@@ -33,20 +34,28 @@ class LuckyController
 
     }
 
+    #[Route("/report", name: "report")]
+    public function report(): Response
+    {
+        return $this->render('report.html.twig');
+    }
+
     #[Route('/lucky')]
     public function number(): Response
     {
         $this->populatePrimes();
         $number = random_int(0, 50);
+        $primeNumber = $this->primeNumbers[$number];
+        return $this->render('lucky_number.html.twig', [
+            'primeNumber' => $primeNumber,
+        ]);
+    }
 
-        return new Response(
+/*         return new Response(
             '<html><body>Here I tried to generate the first 50 prime numbers, but my implementation requires more work so I will revisit this down the line.
             Your generated (propbably) non-prime number is '.$this->primeNumbers[$number].'
             <pre>All prime numbers are '.implode("\n ", $this->primeNumbers).'</pre></body></html>'
-        );
-    }
-
-
+        ); */
 
 /*     #[Route("/api/lucky/number")]
     public function jsonNumber(): Response
