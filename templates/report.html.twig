@@ -11,15 +11,17 @@
         <p>
             <ul>
                 <li>Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.</li>
-                <p>lalal</p>
+                <p>Den enda erfarenhet jag har av objektorientering är kursen oopyhton och det som kom upp i kursen javascript. Sen har jag ströläst lite artiklar tidigare för att försöka förstå vad objektorientering är, men i och med kurserna så börjar jag känna att jag fattar det.</p>
                 <li>Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser?</li>
-                <p>lalal</p>
+                <p>Rent objektorienteringsmässigt så bör man veta att en klass är en ritning för ett objekt. Ett objekt instansieras från en klass. En klass är en beskrivning av något fenomen, exempelvis en bil. Klassen samlar ihop relaterade attribut/properties/medlemsvariabler (exempelvis: registernummer) och relaterade metoder, saker man kan göra med objektet (exempelvis, byta registernummer).</p>
+                <p>Specifikt för PHP så skapar man klasser med class Klassnamn {}, och deklarerar medlemsvariabler och metoder i klasskroppen. Man kan styra deras tillgänglighet utanför klassen med nyckelorden public/private. Generellt vill man ha det mesta private och låta användare av klassen komma åt grejer de behöver via ett API, som man skapar genom klassmetoder och diverse setters och getters.</p>
                 <li>Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?</li>
-                <p>lalal</p>
+                <p>Det känns som att den är likadan som flask / express som vi använt tidigare. Man har lite routes separat för sig, och så har man lite views separat för sig, och så skickar man in data i viewsen för att rendera ut till slutanvändaren. Känns rimligt och strukturerat! Känner inte att det är något specifikt magiskt med just PHP och symfony, utan det är ungefär samma tänk med de grejer vi tidigare använt.</p>
                 <li>Med tanke på artikeln “PHP The Right Way”, vilka delar in den finner du extra intressanta och värdefulla? Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.</li>
-                <p>lalal</p>
+                <p>Det är ju en ganska omfattande artikel med många "kolla här för mera information". Tror den fungerar bra som ett uppslagsverk för nu, ska man arbeta med PHP i yrkeslivet sedan så är det antagligen något man vill ha nära hjärtat. I artikeln pratar de om "design patterns" https://phptherightway.com/#design_patterns, vilket jag blev lite intresserad av efter oopython-kursen. Jag köpte boken "Design Patterns - Elements of reusable object-oriented software" som jag inte läst ännu. Men jag gillar det abstrakta med design patterns, att det är sätt att tänka på som tar sig uttryck i hur kod byggs upp. När jag får tid vill jag gärna fördjupa mig lite i det, och kanske kommer det upp redan i den här kursen!</p>
+                <p>Utöver design patterns så kollade jag också in den standardfilstruktur som de föreslår https://github.com/php-pds/skeleton. Tycker om att ha någon form av koll på var jag har grejerna, och ser gärna hur andra har kommit överens om att är bäst sätt att strukturera kodbasen på.</p>
                 <li>Vilken är din TIL för detta kmom?</li>
-                <p>lala</p>
+                <p>Webpack har jag inte pillat så mycket med tidigare. Var kul att komma igång med kodmiljön. Jag gillar att arbeta på tills man kommer till den punkt där allt flyter. Satte upp och konfade webpack så den fungerar med SASS, och kör SASS med watch på de scss-filer jag använder och sen webpack som watchar resultatfilerna och packar om dem. Så det känns smooth.</p>
             </ul>   
         </p>
     </section>
