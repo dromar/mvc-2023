@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% set pageName = "Search" %}
+
+{% block title %}{{pageName}}{% endblock %}
+
+{% block body %}
+
+<form>
+    <p>
+        <label>Search:
+            <input type="search" name="search" value="{{ search }}">
+        </label>
+    </p>
+</form>
+
+{% endblock %}

@@ -22,12 +22,12 @@ class LuckyController extends AbstractController
         while (count($this->primeNumbers) < 50) {
             $numberToCheck += 1;
             $numberDiv2 = $numberToCheck / 2;
-            
+
             for ($i=3; $i <= $numberDiv2; $i++) {
                 if ($numberToCheck == 1 || $numberToCheck == 2) {
                     array_push($this->primeNumbers, $numberToCheck);
                 } elseif ($numberToCheck % $i == 0) {
-                    array_push($this->primeNumbers, $numberToCheck); 
+                    array_push($this->primeNumbers, $numberToCheck);
                 }
             }
         }
@@ -75,4 +75,3 @@ class LuckyController extends AbstractController
     } */
 
 }
-
