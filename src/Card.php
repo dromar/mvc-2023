@@ -8,6 +8,64 @@ class Card
     protected $suit;
     protected $card;
     private $suitTypes = array("C","D","H","S");
+    private $cards = array(
+        "🂡",
+        "🂢",
+        "🂣",
+        "🂤",
+        "🂥",
+        "🂦",
+        "🂧",
+        "🂨",
+        "🂩",
+        "🂪",
+        "🂫",
+        "🂬",
+        "🂭",
+        "🂮",
+        "🂱",
+        "🂲",
+        "🂳",
+        "🂴",
+        "🂵",
+        "🂶",
+        "🂷",
+        "🂸",
+        "🂹",
+        "🂺",
+        "🂻",
+        "🂼",
+        "🂽",
+        "🂾",
+        "🃁",
+        "🃂",
+        "🃃",
+        "🃄",
+        "🃅",
+        "🃆",
+        "🃇",
+        "🃈",
+        "🃉",
+        "🃊",
+        "🃋",
+        "🃌",
+        "🃍",
+        "🃎",
+        "🃑",
+        "🃒",
+        "🃓",
+        "🃔",
+        "🃕",
+        "🃖",
+        "🃗",
+        "🃘",
+        "🃙",
+        "🃚",
+        "🃛",
+        "🃜",
+        "🃝",
+        "🃞"
+    );
 
     public function __construct()
     {
@@ -21,13 +79,10 @@ class Card
         $this->value = random_int(1, 13);
         $this->suit = $this->suitTypes[random_int(0, 3)];
         $this->card = $this->suit . $this->value;
+        $this->card = $this->cards[random_int(0,55)];
         return $this->card;
     }
 
-    public function getValue(): int
-    {
-        return $this->value;
-    }
 
     public function getAsString(): string
     {
