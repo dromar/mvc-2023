@@ -26,6 +26,6 @@ class Card
 
     public function getAsString(): string
     {
-        return "[{$this->value}]";
+        return "{$this->card}";
     }
 }
