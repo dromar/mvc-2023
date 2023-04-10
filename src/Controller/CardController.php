@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
+use App\Card\DeckOfCards;
 
 class CardController extends AbstractController
 {
@@ -22,11 +23,15 @@ class CardController extends AbstractController
         $cardHand = new CardHand();
         $cardHand->add($card);
         $cardHand->add($cardGraphic);
+        $deck = new DeckOfCards();
+        $deck->populate();
+        var_dump($deck);
 
         $data = [
             "card" => $card->draw(),
             "cardGraphic" => $cardGraphic->draw(),
             "cardHand" => $cardHand->getString(),
+            "deck" => $deck->getString(),
 
         ];
 
