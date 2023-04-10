@@ -7,79 +7,19 @@ class Card
     protected $value;
     protected $suit;
     protected $card;
-    private $suitTypes = array("C","D","H","S");
-    private $cards = array(
-        "🂡",
-        "🂢",
-        "🂣",
-        "🂤",
-        "🂥",
-        "🂦",
-        "🂧",
-        "🂨",
-        "🂩",
-        "🂪",
-        "🂫",
-        "🂬",
-        "🂭",
-        "🂮",
-        "🂱",
-        "🂲",
-        "🂳",
-        "🂴",
-        "🂵",
-        "🂶",
-        "🂷",
-        "🂸",
-        "🂹",
-        "🂺",
-        "🂻",
-        "🂼",
-        "🂽",
-        "🂾",
-        "🃁",
-        "🃂",
-        "🃃",
-        "🃄",
-        "🃅",
-        "🃆",
-        "🃇",
-        "🃈",
-        "🃉",
-        "🃊",
-        "🃋",
-        "🃌",
-        "🃍",
-        "🃎",
-        "🃑",
-        "🃒",
-        "🃓",
-        "🃔",
-        "🃕",
-        "🃖",
-        "🃗",
-        "🃘",
-        "🃙",
-        "🃚",
-        "🃛",
-        "🃜",
-        "🃝",
-        "🃞"
-    );
+    private $suitTypes = array("♠","♥","♦","♣");
 
-    public function __construct()
+
+    public function __construct(string $value = null)
     {
-        $this->value = null;
-        $this->suit = null;
+        $this->value = $value;
         $this->card = null;
     }
 
     public function draw(): string
     {
         $this->value = random_int(1, 13);
-        $this->suit = $this->suitTypes[random_int(0, 3)];
-        $this->card = $this->suit . $this->value;
-        $this->card = $this->cards[random_int(0,55)];
+        $this->card = $this->value . $this->suitTypes[random_int(0, 3)];
         return $this->card;
     }
 

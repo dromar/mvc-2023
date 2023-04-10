@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Card\Card;
+use App\Card\CardGraphic;
 
 class CardController extends AbstractController
 {
@@ -14,9 +15,12 @@ class CardController extends AbstractController
     public function report(): Response
     {
         $card = new Card();
+        $cardGraphic = new CardGraphic();
 
         $data = [
             "card" => $card->draw(),
+            "cardGraphic" => $cardGraphic->draw(),
+
         ];
 
 
