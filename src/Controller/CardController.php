@@ -16,24 +16,8 @@ class CardController extends AbstractController
     #[Route("/card", name: "card")]
     public function report(): Response
     {
-        $card = new Card(1);
-        $cardGraphic = new CardGraphic();
-        $cardGraphic->draw();
-        $cardHand = new CardHand();
-        $cardHand->add($card);
-        $cardHand->add($cardGraphic);
-        $deck = new DeckOfCards();
-        $deck->populate();
-
-        $data = [
-            "card" => $card->getAsString(),
-            "cardGraphic" => $cardGraphic->draw(),
-            "cardHand" => $cardHand->getString(),
-            "deck" => $deck->getString(),
-
-        ];
 
 
-        return $this->render('card.html.twig', $data);
+        return $this->render('card/landingpage.html.twig');
     }
 }

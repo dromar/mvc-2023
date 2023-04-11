@@ -4,10 +4,8 @@ namespace App\Card;
 
 class Card
 {
-    protected $value;
-    protected $suit;
-    public $card;
 
+    protected $card;
     private $cards = [
         "1♠", 
         "2♠", 
@@ -67,12 +65,12 @@ class Card
         "14♣"
     ];
 
-    public function __construct(int $value = null)
+    public function __construct(int $cardArrayPosition = null)
     {
-        if (is_null($value)) {
+        if (is_null($cardArrayPosition)) {
             $this->card = null;
         } else {
-            $this->card = $this->cards[$value];
+            $this->card = $this->cards[$cardArrayPosition];
         }
     }
 

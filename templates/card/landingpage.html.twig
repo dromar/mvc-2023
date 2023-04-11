@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% set pageName = "Landing page" %}
+
+{% block title %}{{pageName}}{% endblock %}
+
+{% block body %}
+
+här kommer länkar
+<ul>
+{#     <li><a href="{{ path('roll') }}">Roll</a></li>
+    <li><a href="{{ path('dice') }}">Report</a></li> #}
+</ul>
+
+<h2>Struktur för klasser</h2>
+<p>Jag har byggt fyra klasser.</p>
+    <ul>
+        <li>Card - klass för ett enskilt kort.</li>
+        <li>CardGraphic - klass för UTF-8-kort. Ärver av Card</li>
+        <li>CardHand - klass för en samling kort. Aggregationsförhållande till Card.</li>
+        <li>DeckOfCards - klass för en kortlek. Aggregationsförhållande till Card. Kommer kanske att ärva av CardHand om kommande uppgifter tillåter det.</li>
+    </ul>
+<p>Klasserna med deras medlemsvariabler och metoder finns beskrivna i nedan UML-diagram.</p>
+
+<img src="{{ asset('img/kmom02.png') }}">
+{% endblock %}

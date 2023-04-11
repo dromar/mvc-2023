@@ -17,7 +17,6 @@ class DeckOfCards
     {
         for ($i = 0; $i <= 55; $i++) {
             $card = new CardGraphic($i);
-            var_dump($card->card);
             $this->add($card);
         }
 
@@ -41,7 +40,7 @@ class DeckOfCards
     {
         $values = [];
         foreach ($this->deck as $card1) {
-            array_push($values, $card1->card);
+            array_push($values, $card1->getAsString());
         }
         return implode(", ", $values);
     }
