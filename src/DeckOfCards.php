@@ -15,8 +15,9 @@ class DeckOfCards
 
     public function populate(): void
     {
-        for ($i = 0; $i <= 52; $i++) {
-            $card = new Card($i);
+        for ($i = 0; $i <= 55; $i++) {
+            $card = new CardGraphic($i);
+            var_dump($card->card);
             $this->add($card);
         }
 
@@ -39,8 +40,8 @@ class DeckOfCards
     public function getString(): string
     {
         $values = [];
-        foreach ($this->deck as $card) {
-            array_push($values, $card->getAsString());
+        foreach ($this->deck as $card1) {
+            array_push($values, $card1->card);
         }
         return implode(", ", $values);
     }

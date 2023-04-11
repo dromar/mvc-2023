@@ -6,9 +6,9 @@ class Card
 {
     protected $value;
     protected $suit;
-    protected $card;
-    private $suitTypes = array("♠","♥","♦","♣");
-    private $cards = array(
+    public $card;
+
+    private $cards = [
         "1♠", 
         "2♠", 
         "3♠", 
@@ -65,14 +65,15 @@ class Card
         "12♣",
         "13♣",
         "14♣"
-    );
+    ];
 
     public function __construct(int $value = null)
     {
-        if ($value) {
+        if (is_null($value)) {
+            $this->card = null;
+        } else {
             $this->card = $this->cards[$value];
         }
-        $this->card = null;
     }
 
     public function draw(): string
@@ -84,6 +85,6 @@ class Card
 
     public function getAsString(): string
     {
-        return "{$this->card}";
+        return "$this->card";
     }
 }
