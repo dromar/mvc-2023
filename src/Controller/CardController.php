@@ -20,4 +20,16 @@ class CardController extends AbstractController
 
         return $this->render('card/landingpage.html.twig');
     }
+
+    #[Route("/deck", name: "card")]
+    public function deck(): Response
+    {
+        $deck = new DeckOfCards();
+        $deck->populate();
+        $data = [
+            'deck' => $deck->getString(),
+        ];
+
+        return $this->render('card/deck.html.twig', $data);
+    }
 }
