@@ -10,6 +10,8 @@ class CardGraphic extends Card
             $this->card = null;
         } else {
             $this->card = $this->cards[$cardArrayPosition];
+            $this->originalPlace = $cardArrayPosition;
+            var_dump($cardArrayPosition);
         }
     }
 

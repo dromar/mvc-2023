@@ -44,4 +44,25 @@ class DeckOfCards
         }
         return implode(", ", $values);
     }
+
+    public function sort(): void
+    // kolla vilken suit kortet har, ??
+    {
+        usort($this->deck,function($first,$second){
+            return $first->getPosition() > $second->getPosition();
+        });
+/*         $sorted = [];
+        foreach ($this->deck as $card1) {
+            $sorted[], $card1->getAsString());
+        }
+        return implode(", ", $values); */
+    }
+
+    public function shuffle(): void
+
+    {   
+        for ($i = 0; $i <= 50; $i++) {
+            shuffle($this->deck);
+        }
+    }
 }

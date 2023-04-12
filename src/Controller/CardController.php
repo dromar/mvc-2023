@@ -26,6 +26,7 @@ class CardController extends AbstractController
     {
         $deck = new DeckOfCards();
         $deck->populate();
+        $deck->shuffle();
         $data = [
             'deck' => $deck->getString(),
         ];
