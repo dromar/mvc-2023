@@ -65,4 +65,21 @@ class DeckOfCards
             shuffle($this->deck);
         }
     }
+
+
+    public function draw(int $cards = 1): String
+
+    {   
+        if ($cards == 1) {
+            $tmpCard = array_pop($this->deck);
+            return $tmpCard->getAsString();
+        } else {
+            $tmpCards = array_splice($this->deck,0,$cards);
+            $values = [];
+            foreach ($tmpCards as $card1) {
+                array_push($values, $card1->getAsString());
+            }
+            return implode(", ", $values);
+        }
+    }
 }

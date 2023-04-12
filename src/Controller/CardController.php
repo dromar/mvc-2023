@@ -27,8 +27,9 @@ class CardController extends AbstractController
         $deck = new DeckOfCards();
         $deck->populate();
         $deck->shuffle();
+        $deckCard = $deck->draw(5);
         $data = [
-            'deck' => $deck->getString(),
+            'deck' => $deckCard,
         ];
 
         return $this->render('card/deck.html.twig', $data);
