@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% set pageName = "Deal" %}
+
+{% block title %}{{pageName}}{% endblock %}
+
+{% block body %}
+
+{% for row in deck %}
+    <li>{{ row }}</li>
+{% endfor %}
+
+<li>Cards left: {{ cardsLeft }}</li>
+{% endblock %}

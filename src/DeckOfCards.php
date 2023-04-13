@@ -3,6 +3,7 @@
 namespace App\Card;
 
 use App\Card\Card;
+use PhpParser\Node\Expr\Cast\Array_;
 
 class DeckOfCards
 {
@@ -26,6 +27,11 @@ class DeckOfCards
             $this->add($card);
         }
 
+    }
+
+    public function getDeckArr(): Array
+    {
+        return $this->deck;
     }
 
 /*     public function getNumberDices(): int

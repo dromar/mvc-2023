@@ -6,11 +6,15 @@
 
 {% block body %}
 
-här kommer länkar
-<ul>
-{#     <li><a href="{{ path('roll') }}">Roll</a></li>
-    <li><a href="{{ path('dice') }}">Report</a></li> #}
-</ul>
+<p>
+    <ul>
+        <li><a href="{{ path('card') }}">card</a></li>
+        <li><a href="{{ path('deck') }}">deck</a></li>
+        <li><a href="{{ path('draw') }}">draw</a></li>
+        <li><a href="{{ path('shuffle') }}">shuffle</a></li>
+{#         <li><a href="{{ path('deal', {'players': 4}, {'cards': 5}) }}">deal</a></li> #}
+    </ul>
+</p>
 
 <h2>Struktur för klasser</h2>
 <p>Jag har byggt fyra klasser.</p>
@@ -23,4 +27,6 @@ här kommer länkar
 <p>Klasserna med deras medlemsvariabler och metoder finns beskrivna i nedan UML-diagram.</p>
 
 <img src="{{ asset('img/kmom02.png') }}">
+
+
 {% endblock %}
