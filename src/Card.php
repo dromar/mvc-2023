@@ -74,7 +74,6 @@ class Card
         } else {
             $this->card = $this->cards[$cardArrayPosition];
             $this->originalPlace = $cardArrayPosition;
-            var_dump($cardArrayPosition);
         }
     }
 

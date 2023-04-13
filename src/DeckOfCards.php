@@ -8,6 +8,12 @@ class DeckOfCards
 {
     private $deck = array();
 
+    public function __construct(array $deck = null)
+    {
+        if (isset($deck)) {
+            $this->deck = $deck;
+        }
+    }
     public function add(Card $card): void
     {
         array_push($this->deck, $card);
@@ -82,4 +88,10 @@ class DeckOfCards
             return implode(", ", $values);
         }
     }
+
+    public function length(): int
+    {   
+       return count($this->deck);
+    }
+
 }

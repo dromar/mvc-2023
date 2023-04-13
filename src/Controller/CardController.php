@@ -24,6 +24,7 @@ class CardController extends AbstractController
     #[Route("/deck", name: "card")]
     public function deck(): Response
     {
+
         $deck = new DeckOfCards();
         $deck->populate();
         $deck->shuffle();
@@ -33,5 +34,43 @@ class CardController extends AbstractController
         ];
 
         return $this->render('card/deck.html.twig', $data);
+    }
+
+    #[Route("/deck/draw", name: "draw")]
+    public function draw(): Response
+    {
+
+        $deck = new DeckOfCards();
+        $deck->populate();
+        $deck->shuffle();
+        $deckCard = $deck->draw();
+        $data = [
+            'deck' => $deckCard,
+            'cardsLeft' => $deck->length(),
+        ];
+
+        return $this->render('card/draw.html.twig', $data);
+    }
+
+
+    #[Route("/deck/draw/{num<\d+>}", name: "drawMany")]
+    public function drawMany(int $num): Response
+    {
+
+        if ($num > 99) {
+            throw new \Exception("Can not draw more than 56 cards!");
+        }
+
+
+        $deck = new DeckOfCards();
+        $deck->populate();
+        $deck->shuffle();
+        $deckCard = $deck->draw($num);
+        $data = [
+            'deck' => $deckCard,
+            'cardsLeft' => $deck->length(),
+        ];
+
+        return $this->render('card/draw.html.twig', $data);
     }
 }

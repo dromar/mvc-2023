@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% set pageName = "Draw a card" %}
+
+{% block title %}{{pageName}}{% endblock %}
+
+{% block body %}
+
+<li>{{ deck }}</li>
+
+<li>Cards left: {{ cardsLeft }}</li>
+{% endblock %}
