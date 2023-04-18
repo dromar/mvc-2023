@@ -64,20 +64,64 @@ class ApiController extends AbstractController
         );
         return $response;
     }
-/*     #[Route("/api/deck/draw", name: "draw", methods: ['POST'])]
-    public function save(
+
+    #[Route("/api/deck/draw", name: "api-draw")]
+    public function draw(
         SessionInterface $session
     ): Response
     {
-        $roundTotal = $session->get("pig_round");
-        $gameTotal = $session->get("pig_total");
+        if (null !== $session->get("api-deck")) {
+            $deck = new DeckOfCards($session->get("api-deck"));
+        } else {
+            $deck = new DeckOfCards();
+            $deck->populate();
+            $deck->shuffle();
+        }
+        $deckCard = $deck->draw();
+        $session->set("api-deck", $deck->getDeckArr());
 
-        $session->set("pig_round", 0);
-        $session->set("pig_total", $roundTotal + $gameTotal);
+        $data = [
+            'deck' => $deckCard,
+            'cardsLeft' => $deck->length(),
+        ];
 
-        return $this->redirectToRoute('pig_play');
-    } */
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
 
+
+    #[Route("/deck/draw/{num<\d+>}", name: "drawMany")]
+    public function drawMany(int $num, SessionInterface $session): Response
+    {
+
+        if ($num > 99) {
+            throw new \Exception("Can not draw more than 56 cards!");
+        }
+
+        if (null !== $session->get("deck")) {
+            $deck = new DeckOfCards($session->get("deck"));
+        } else {
+            $deck = new DeckOfCards();
+            $deck->populate();
+            $deck->shuffle();
+        }
+        $deckCard = $deck->draw($num);
+        $session->set("deck", $deck->getDeckArr());
+        $data = [
+            'deck' => $deckCard,
+            'cardsLeft' => $deck->length(),
+        ];
+
+       
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
 /*     #[Route("/api/deck/draw/{number}", name: "shuffle", methods: ['POST'])]
     public function save(
         SessionInterface $session
