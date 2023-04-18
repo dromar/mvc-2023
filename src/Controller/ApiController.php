@@ -24,14 +24,15 @@ class ApiController extends AbstractController
         return $this->render('card/landingpage-api.html.twig');
     }
 
-    #[Route("/api/deck", name: "deck", methods: ['GET'])]
+    #[Route("/api/deck", name: "api-deck", methods: ['GET'])]
     public function deck(
         SessionInterface $session
     ): Response
     {
         $deck = new DeckOfCards();
+        $deck->populate();
         $data = [
-            'deck' => $deck,
+            'deck' => $deck->getString(),
         ];
 
         // return new JsonResponse($data);
@@ -43,6 +44,26 @@ class ApiController extends AbstractController
         return $response;
     }
 
+    #[Route("/api/deck/shuffle", name: "api-shuffle", methods: ['GET'])]
+    public function shuffle(
+        SessionInterface $session
+    ): Response
+    {
+        $deck = new DeckOfCards();
+        $deck->populate();
+        $deck->shuffle();
+        $data = [
+            'deck' => $deck->getString(),
+        ];
+
+        // return new JsonResponse($data);
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
 /*     #[Route("/api/deck/draw", name: "draw", methods: ['POST'])]
     public function save(
         SessionInterface $session
@@ -55,9 +76,9 @@ class ApiController extends AbstractController
         $session->set("pig_total", $roundTotal + $gameTotal);
 
         return $this->redirectToRoute('pig_play');
-    }
+    } */
 
-    #[Route("/api/deck/draw/{number}", name: "shuffle", methods: ['POST'])]
+/*     #[Route("/api/deck/draw/{number}", name: "shuffle", methods: ['POST'])]
     public function save(
         SessionInterface $session
     ): Response
@@ -69,9 +90,9 @@ class ApiController extends AbstractController
         $session->set("pig_total", $roundTotal + $gameTotal);
 
         return $this->redirectToRoute('pig_play');
-    }
+    } */
 
-    #[Route("/api/deck/deal/", name: "shuffle", methods: ['POST'])]
+/*     #[Route("/api/deck/deal/", name: "shuffle", methods: ['POST'])]
     public function save(
         SessionInterface $session
     ): Response
@@ -83,8 +104,8 @@ class ApiController extends AbstractController
         $session->set("pig_total", $roundTotal + $gameTotal);
 
         return $this->redirectToRoute('pig_play');
-    }
-
+    } */
+/* 
     #[Route("/api/deck", name: "deck", methods: ['GET'])]
     public function play(
         SessionInterface $session
@@ -101,8 +122,8 @@ class ApiController extends AbstractController
 
         return $this->render('pig/play.html.twig', $data);
     }
-
  */
+
 
     /**
      * @var array  $quoteLibrary Library of dumb success quotes
