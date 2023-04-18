@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% set pageName = "Landing page" %}
+
+{% block title %}{{pageName}}{% endblock %}
+
+{% block body %}
+
+<p>
+    <ul>
+        <li><a href="{{ path('quote') }}">Provides a random quote</a></li>
+
+    </ul>
+</p>
+
+
+
+{% endblock %}

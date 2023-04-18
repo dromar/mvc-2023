@@ -102,7 +102,7 @@ class CardController extends AbstractController
         return $this->render('card/draw.html.twig', $data);
     }
 
-    #[Route("/deck/deal/{players<\d+>}/{cards<\d+>}", name: "deal")]
+    #[Route("/deck/deal/{players<\d+>}/{cards<\d+>}", name: "players")]
     public function deal(int $players, int $cards, SessionInterface $session): Response
     {
 
@@ -116,7 +116,6 @@ class CardController extends AbstractController
         }
 
         $cardsArray = [];
-
         for ($i = 1; $i <= $players; $i++) {
             $cardsArray[$i] = $deck->draw($cards);
         }

@@ -29,7 +29,7 @@ class LuckyControllerApi
         );
     }
 
-    #[Route("/api/quote")]
+    #[Route("/api/quote", name: "quote")]
     public function jsonQuote(): Response
     {
         $this->populateLibrary();
@@ -49,4 +49,6 @@ class LuckyControllerApi
         );
         return $response;
     }
+
+
 }
