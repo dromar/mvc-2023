@@ -10,7 +10,10 @@
     <ul>
         <li><a href="{{ path('quote') }}">Provides a random quote</a></li>
         <li><a href="{{ path('api-deck') }}">JSON with sorted deck</a></li>
-
+        <li><a href="{{ path('api-shuffle') }}">JSON with shuffled deck</a></li>
+        <li><a href="{{ path('api-draw') }}">JSON with one drawn card</a></li>
+        <li><a href="{{ path('api-drawMany', {num: 5}) }}">JSON with a number of drawn cards</a></li>
+        <li><a href="{{ path('api-players', {players: 4, cards: 3}) }}">JSON with dealt cards to a number of player</a></li>
     </ul>
 </p>
 

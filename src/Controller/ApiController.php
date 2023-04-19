@@ -15,7 +15,6 @@ use App\Card\DeckOfCards;
 
 class ApiController extends AbstractController
 {
-
     #[Route("/api", name: "api-landing")]
     public function report(): Response
     {
@@ -27,8 +26,7 @@ class ApiController extends AbstractController
     #[Route("/api/deck", name: "api-deck", methods: ['GET'])]
     public function deck(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $deck->populate();
         $data = [
@@ -47,8 +45,7 @@ class ApiController extends AbstractController
     #[Route("/api/deck/shuffle", name: "api-shuffle", methods: ['GET'])]
     public function shuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $deck->populate();
         $deck->shuffle();
@@ -97,8 +94,7 @@ class ApiController extends AbstractController
     #[Route("/api/deck/draw", name: "api-draw")]
     public function draw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         if (null !== $session->get("api-deck")) {
             $deck = new DeckOfCards($session->get("api-deck"));
         } else {
@@ -179,7 +175,7 @@ class ApiController extends AbstractController
 
         return $this->redirectToRoute('pig_play');
     } */
-/* 
+/*
     #[Route("/api/deck", name: "deck", methods: ['GET'])]
     public function play(
         SessionInterface $session
@@ -191,7 +187,7 @@ class ApiController extends AbstractController
             "pigDices" => $session->get("pig_dices"),
             "pigRound" => $session->get("pig_round"),
             "pigTotal" => $session->get("pig_total"),
-            "diceValues" => $dicehand->getString() 
+            "diceValues" => $dicehand->getString()
         ];
 
         return $this->render('pig/play.html.twig', $data);
@@ -239,6 +235,6 @@ class ApiController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
-    } 
+    }
 
 }

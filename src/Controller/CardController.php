@@ -14,7 +14,6 @@ use App\Card\DeckOfCards;
 
 class CardController extends AbstractController
 {
-
     #[Route("/card", name: "card")]
     public function report(): Response
     {
@@ -56,8 +55,7 @@ class CardController extends AbstractController
     #[Route("/deck/draw", name: "draw")]
     public function draw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
 
         if (null !== $session->get("deck")) {
             $deck = new DeckOfCards($session->get("deck"));

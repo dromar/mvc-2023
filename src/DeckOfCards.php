@@ -29,7 +29,7 @@ class DeckOfCards
 
     }
 
-    public function getDeckArr(): Array
+    public function getDeckArr(): array
     {
         return $this->deck;
     }
@@ -60,19 +60,18 @@ class DeckOfCards
     public function sort(): void
     // kolla vilken suit kortet har, ??
     {
-        usort($this->deck,function($first,$second){
+        usort($this->deck, function ($first, $second) {
             return $first->getPosition() > $second->getPosition();
         });
-/*         $sorted = [];
-        foreach ($this->deck as $card1) {
-            $sorted[], $card1->getAsString());
-        }
-        return implode(", ", $values); */
+        /*         $sorted = [];
+                foreach ($this->deck as $card1) {
+                    $sorted[], $card1->getAsString());
+                }
+                return implode(", ", $values); */
     }
 
     public function shuffle(): void
-
-    {   
+    {
         for ($i = 0; $i <= 50; $i++) {
             shuffle($this->deck);
         }
@@ -80,13 +79,12 @@ class DeckOfCards
 
 
     public function draw(int $cards = 1): String
-
-    {   
+    {
         if ($cards == 1) {
             $tmpCard = array_pop($this->deck);
             return $tmpCard->getAsString();
         } else {
-            $tmpCards = array_splice($this->deck,0,$cards);
+            $tmpCards = array_splice($this->deck, 0, $cards);
             $values = [];
             foreach ($tmpCards as $card1) {
                 array_push($values, $card1->getAsString());
@@ -96,8 +94,8 @@ class DeckOfCards
     }
 
     public function length(): int
-    {   
-       return count($this->deck);
+    {
+        return count($this->deck);
     }
 
 }
