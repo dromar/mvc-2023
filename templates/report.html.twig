@@ -30,13 +30,22 @@
         <p>
             <ul>
                 <li>Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.</li>
-                <p>lalal</p>
+                <p>Objektorientering generellt innebär att man strukturerar och modellerar sin kod enligt de (mer eller mindre) objekt som ens program arbetar med. I objektorientering programering arbetar man med klasser, som agerar som en ritning för skapade objekt.</p>
+                <p>Klasserna kan sinsemellan ha olika relationer, de förhåller sig till varandra på olika sätt. Två vanliga relationer är arv och komposition.</p>
+                <p>Arv innebär konkret att en barnklass (säg "hund" med egenskaperna "äter, springer, viftar på svansen") ärver av en föräldraklass (säg "djur" med egenskaperna "äter, röra sig"). Barnklassen är både av samma sort som föräldraklassen, men också en specificering i en egen klass.</p>
+                <p>Komposition innebär att en föräldraklass innehåller objekt av en barnklass, och att dessa objekt inte kan existera utanför föräldraklassen. Tänk "rum" i ett "hus".</p>
+                <p>Interface är ett sätt att definiera vad en klass ska stödja för exempelvis metoder. En klass som använder sig av ett interface förbinder sig att på något sätt implementera de metoder som specificeras i interfacet.</p>
+                <p>Slutligen traits, som är ett sätt för PHP att arbeta runt att multipla arv inte stöds i PHP. Istället kan man använda trait, som exempelvis kan vara en uppsättning metoder, som man kan slänga in i olika klasser. På så sätt kan flera klasser enkelt få tillgång till samma metoder, utan att de ärver av samma föräldraklass.</p>
+                <p>
                 <li>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?</li>
-                <p>lalal</p>
+                <p>Jag började med att bygga klasserna. Började först med Card och CardGraphic, där den senare ärver av den första. Byggde sedan CardHand och testade att jag kan dependecyinjecta både Card och CardGraphic i den. Byggde sist DeckOfCards. Har utvecklat alla klasser i takt med att jag byggt andra klasser och insett att jag behöver olika metoder.</p>
+                <p>Är inte helt säker att jag köper att det är frågan om komposition i fallet med deck och card, tycker att man kan tänka sig att ett kort kan existera utanför ett deck.</p>
+                <p>förbättringspotential: jag kan definitivt dokumentera bättre. Skulle eventuellt kunna låta DeckOfCards ärva av CardHand, eftersom DeckOfCards egentligen bara är en uppsättning kort på samma sätt som CardHand.</p>
                 <li>Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?</li>
-                <p>lalal</p>
+                <p>Jag är lite kluven faktiskt! När man börjar med ett projekt så kan det vara bra att skissa "vad man behöver för att lösa uppgiften", och tänka igenom lite vilka metoder klasserna ska ha och hur klasserna relaterar till varandra.</p>
+                <p>Men sedan är det kanske först när man sitter och skriver kod som man märker av vad man faktiskt behöver ha stöd för i de olika klasserna, och det man upptäcker i själva programmerandet är saker som kan vara väldigt svåra att förutse när man ritar UML och skriver pseudokod.</p>
                 <li>Vilken är din TIL för detta kmom?</li>
-                <p>lala</p>
+                <p>Dependency injection klickade för mig. Alltså att man inte vill hårdkoda vilka objekt som en "kompositklass" ska innehålla, utan att man vill skicka in dem (och då kan skicka in också barnklasser). Fick det att fungera med Card och CardGraphic i CardHand-klassen.</p>
 
 
     
